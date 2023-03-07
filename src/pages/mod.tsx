@@ -8,8 +8,8 @@ const ModPage = () => {
 
   const handleSubmit = (e: React.ChangeEvent<any>): void => {
     e.preventDefault();
-    const fixedName = name.replace(/\s/g, "%20");
-    const fixedMessage = message.replace(/\s/g, "%20");
+    const fixedName = btoa(name);
+    const fixedMessage = btoa(message);
     router.push(`/?n=${fixedName}&m=${fixedMessage}`);
   };
 

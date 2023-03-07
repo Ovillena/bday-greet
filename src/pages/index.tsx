@@ -9,6 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const router = useRouter();
   const { n, m = "" } = router.query;
+  const name = atob(n);
+  const message = atob(m);
 
   return (
     <>
@@ -29,7 +31,7 @@ export default function Home() {
         <div>
           <p>
             {(n || m) && (m !== "" || n !== "")
-              ? `${n}${m === "" || n === "" ? "" : ", "} ${m}`
+              ? `${name}${m === "" || n === "" ? "" : ", "} ${message}`
               : ""}
           </p>
         </div>
