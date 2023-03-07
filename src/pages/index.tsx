@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const router = useRouter();
-  const { n, m="" } = router.query;
+  const { n, m = "" } = router.query;
 
   return (
     <>
@@ -20,10 +20,18 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>Octavio created this website to say</p>
+          <p>
+            {(n || m) && (m !== "" || n !== "")
+              ? `Octavio created this website to say`
+              : "Octavio has nothing to say to you at this moment"}
+          </p>
         </div>
         <div>
-          <p>{(n||m)&&(m!==''||n!=='') ? `${n}, ${m}` : ''}</p>
+          <p>
+            {(n || m) && (m !== "" || n !== "")
+              ? `${n}${m === "" || n === "" ? "" : ", "} ${m}`
+              : ""}
+          </p>
         </div>
       </main>
     </>
