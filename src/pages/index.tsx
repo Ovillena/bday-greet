@@ -1,16 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useRouter } from "next/router";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   const router = useRouter();
-  const { n, m = "" } = router.query;
-  const name = Buffer.from(`${n}`, "base64").toString("ascii");
-  const message = Buffer.from(`${m}`, "base64").toString("ascii");
+  const { n = "", m = "" } = router.query;
+  const name = Buffer.from(n.toString(), "base64").toString("ascii");
+  const message = Buffer.from(m.toString(), "base64").toString("ascii");
 
   return (
     <>

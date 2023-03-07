@@ -8,8 +8,8 @@ const ModPage = () => {
 
   const handleSubmit = (e: React.ChangeEvent<any>): void => {
     e.preventDefault();
-    const fixedName = Buffer.from(`${name}`).toString("base64");
-    const fixedMessage = Buffer.from(`${message}`).toString("base64");
+    const fixedName = Buffer.from(name).toString("base64");
+    const fixedMessage = Buffer.from(message).toString("base64");
     router.push(`/?n=${fixedName}&m=${fixedMessage}`);
   };
 
