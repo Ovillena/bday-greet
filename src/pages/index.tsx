@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const router = useRouter();
   const { n, m = "" } = router.query;
-  const name = atob(`${n}`);
-  const message = atob(`${m}`);
+  const name = Buffer.from(`${n}`, "base64").toString("ascii");
+  const message = Buffer.from(`${m}`, "base64").toString("ascii");
 
   return (
     <>
