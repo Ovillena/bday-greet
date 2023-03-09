@@ -240,7 +240,6 @@ const particlesConfig = {
       center: {
         x: 50,
         y: 50,
-        mode: "percent",
         radius: 0,
       },
       decay: 0,
