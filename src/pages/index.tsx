@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { useRouter } from "next/router";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import Heart from "@/components/Heart";
 
 export default function Home() {
   const router = useRouter();
@@ -44,6 +45,7 @@ export default function Home() {
               ? `${name}${m === "" || n === "" ? "" : ", "} ${message}`
               : ""}
           </p>
+          <Heart />
         </div>
       </main>
     </div>
