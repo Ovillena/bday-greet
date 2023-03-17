@@ -45,7 +45,7 @@ export default function Home() {
               ? `${name}${m === "" || n === "" ? "" : ", "} ${message}`
               : ""}
           </p>
-          <Heart />
+          {(n || m) && <Heart />}
         </div>
       </main>
     </div>
