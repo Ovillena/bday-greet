@@ -40,12 +40,9 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.main}>
-          <p>
-            {(n || m) && (m !== "" || n !== "")
-              ? `${name}${m === "" || n === "" ? "" : ", "} ${message}`
-              : ""}
-          </p>
+          <p>{(n || m) && (m !== "" || n !== "") ? `${name}` : ""}</p>
           {(n || m) && <Heart />}
+          <p>{(n || m) && (m !== "" || n !== "") ? `${message}` : ""}</p>
         </div>
       </main>
     </div>
